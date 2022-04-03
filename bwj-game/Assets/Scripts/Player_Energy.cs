@@ -8,8 +8,8 @@ public class Player_Energy : MonoBehaviour
 {
 
     [SerializeField] private GameObject Player;
-    [SerializeField] private float Decrease;
-    [SerializeField] private float charge;
+    [SerializeField] public float Decrease;
+    [SerializeField] public float charge;
     // Start is called before the first frame update
     public float maxEnergy = 100;
     public float currentEnergy;

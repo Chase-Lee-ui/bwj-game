@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Task_Manager : MonoBehaviour
 {
-    public Task_Progress[] Tasks;
+    public Task_Progress[] Task_Progresses;
     public GameObject Game_Over;
     public float Timer = 60.0f;
     public bool CompletedAll;
@@ -12,7 +12,7 @@ public class Task_Manager : MonoBehaviour
     void Update()
     {
         Timer -= Time.deltaTime;
-        foreach(var tasks in Tasks)
+        foreach(var tasks in Task_Progresses)
         {
             if(Timer<= 0)
             {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6576271671355148664}
   - component: {fileID: 6576271671355148671}
   - component: {fileID: 6576271671355148670}
+  - component: {fileID: 6081733632827522336}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -137,3 +138,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startTimeBtwSpawns: 0.1
   echo: {fileID: 8982159595011469688, guid: a47dfef09bab6b14aa9f3f403cba7d4d, type: 3}
+--- !u!58 &6081733632827522336
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6576271671355148667}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

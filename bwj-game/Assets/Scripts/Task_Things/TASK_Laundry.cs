@@ -11,8 +11,13 @@ public class TASK_Laundry : Task_Progress
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    // public override void Update()
+    // {
         
+    // }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        // if(col.)
     }
 }

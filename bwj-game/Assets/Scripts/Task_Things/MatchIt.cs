@@ -3,33 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class plunge : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler, IPointerUpHandler
+public class MatchIt : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointerEnterHandler
 {
-
-    static plunge hoverItem;
+    static MatchIt hoverItem;
 
     public GameObject linePrefab;
     public string itemName;
-    // Start is called before the first frame update
 
     private GameObject line;
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        line = Instantiate(linePrefab, transform.position, Quarternion.identity, transform.parent.parent);
+        line = Instantiate(linePrefab, transform.position, Quaternion.identity, transform.parent.parent);
         UpdateLine(eventData.position);
     }
-
-   /* void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }*/
 
     public void OnDrag(PointerEventData eventData)
     {
@@ -43,11 +30,7 @@ public class plunge : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointer
             UpdateLine(hoverItem.transform.position);
             Destroy(hoverItem);
             Destroy(this);
-            plungepoints.AddPoint();
-        }
-        else
-        {
-            Destroy(line);
+            MatchLogic.AddPoint();
         }
     }
 
@@ -60,7 +43,6 @@ public class plunge : MonoBehaviour, IPointerDownHandler, IDragHandler, IPointer
     {
         Vector3 direction = position - transform.position;
         line.transform.right = direction;
-
         line.transform.localScale = new Vector3(direction.magnitude, 1, 1);
     }
 

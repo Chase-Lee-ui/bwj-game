@@ -1,29 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class plungepoints : MonoBehaviour
+public class MatchLogic : MonoBehaviour
 {
-    static plungepoints Instance;
+    static MatchLogic Instance;
 
-    public int maxPoints = 2;
-    public Text pointsText;
-    public GameObject levelCompletedUI;
+    public int maxPoints = 3;
+ //   public Text pointsText;
+    public GameObject levelCompleteUI;
     private int points = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
     }
 
-    void UpdatePotinsText();
+    void UpdatePotinsText()
     {
-        pointsText.text = points + "/" + maxPoints;
-        if (plungepoints == maxPoints) {
-            levelCompletedUI.SetActive(true);
+ //       pointsText.text = points + "/" + maxPoints;
+        if (points == maxPoints)
+        {
+            levelCompleteUI.SetActive(true);
         }
     }
-
 
     public static void AddPoint()
     {
@@ -34,10 +36,5 @@ public class plungepoints : MonoBehaviour
     {
         Instance.points += points;
         Instance.UpdatePotinsText();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

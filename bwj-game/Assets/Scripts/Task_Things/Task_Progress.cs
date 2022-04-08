@@ -9,7 +9,7 @@ public class Task_Progress : MonoBehaviour
     public float Rate_Of_Decay = 0.5f;
     public bool Decay_Enabled;
 
-    public void Update()
+    public virtual void Update()
     {
         if(Progress >= 0 && Decay_Enabled)
         {

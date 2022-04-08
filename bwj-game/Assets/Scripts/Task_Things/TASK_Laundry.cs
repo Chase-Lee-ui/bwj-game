@@ -22,7 +22,7 @@ public class TASK_Laundry : Task_Progress
         {
             for(int i = 0; i<AmtOfLaundry; i++)
             {
-                var img = Instantiate(Laundry, Canvas.transform) as GameObject;
+                var img = Instantiate(Laundry) as GameObject;
                 img.transform.SetParent(Canvas.transform, false);
             }
             Spawned = true;

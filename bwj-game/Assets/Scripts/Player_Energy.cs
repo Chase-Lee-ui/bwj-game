@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class Player_Energy : MonoBehaviour
 {
 
-    [SerializeField] private GameObject Player;
     [SerializeField] public float Decrease;
     [SerializeField] public float charge;
     // Start is called before the first frame update
@@ -29,9 +28,9 @@ public class Player_Energy : MonoBehaviour
         //Out of Energy Reset (technically tentative for change)
         if (currentEnergy <= 0)
         {
-            this.Player.gameObject.SetActive(false);
+            this.gameObject.SetActive(false);
         }
-        if (!this.Player.gameObject.activeSelf)
+        if (!this.gameObject.activeSelf)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -48,10 +47,10 @@ public class Player_Energy : MonoBehaviour
 
 
         //Recharge Station
-        if (this.Player.gameObject.transform.position.y <= 1.5
-          && this.Player.gameObject.transform.position.y >= -1.5
-          && this.Player.gameObject.transform.position.x <= 1.5
-          && this.Player.gameObject.transform.position.x >= -1.5
+        if (this.gameObject.transform.position.y <= 1.5
+          && this.gameObject.transform.position.y >= -1.5
+          && this.gameObject.transform.position.x <= 1.5
+          && this.gameObject.transform.position.x >= -1.5
           && currentEnergy < maxEnergy)
         {
             currentEnergy += Time.deltaTime*charge;

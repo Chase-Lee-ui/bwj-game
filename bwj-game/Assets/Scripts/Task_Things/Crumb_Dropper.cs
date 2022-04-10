@@ -21,7 +21,7 @@ public class Crumb_Dropper : MonoBehaviour
 
     void Update()
     {
-        transform.position = Vector2.Lerp(transform.position, Destination, Time.deltaTime);
+        transform.position = Vector2.Lerp(transform.position, Destination, Time.deltaTime * 0.5f);
     }
 
     IEnumerator Dropper()

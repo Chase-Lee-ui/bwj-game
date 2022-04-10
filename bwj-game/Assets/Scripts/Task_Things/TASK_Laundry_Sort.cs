@@ -7,9 +7,9 @@ public class TASK_Laundry_Sort : Task_Progress
     public Laundry_Basket[] Laundry_Baskets;
     public GameObject Spawn_Point1, Spawn_Point2;
     public bool Spawned;
-    public int Shirts;
+    public float Shirts;
     public GameObject Shirt;
-    public int Pants;
+    public float Pants;
     public GameObject Pant;
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,7 @@ public class TASK_Laundry_Sort : Task_Progress
             total += Laundry_Baskets[i].Amt_Inside;
         }
 
-        Progress = total / (Shirts + Pants);
+        Progress = total / (Shirts + Pants) * 100.0f;
         if(Progress >= 100)
         {
             Indicator.SetActive(false);

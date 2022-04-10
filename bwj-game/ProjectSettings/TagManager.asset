@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Laundry
+  - Crumb
+  - Pants
+  - Shirts
   layers:
   - Default
   - TransparentFX

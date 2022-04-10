@@ -19,5 +19,19 @@ public class Mouse_Move : MonoBehaviour
         );
 
         transform.position = Canva.transform.TransformPoint(position);
+        this.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+    }
+
+    void Update()
+    {
+        if(Canva == null)
+        {
+            Canva = (Canvas)FindObjectOfType(typeof(Canvas));
+        }
+        if(Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
     }
 }

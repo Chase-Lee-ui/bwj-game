@@ -5131,6 +5131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnergyBar
       objectReference: {fileID: 0}
+    - target: {fileID: 8309797003399245187, guid: be5754a901c36d442992c691cb71250f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5149,7 +5153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5157,7 +5161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5197,11 +5201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -160
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 8309797003399245188, guid: be5754a901c36d442992c691cb71250f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5226,7 +5230,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2130677629422487398, guid: a98cac5c4453aa549b00b09c5ec65c06, type: 3}
       propertyPath: Decrease
-      value: 75
+      value: -75
       objectReference: {fileID: 0}
     - target: {fileID: 2130677629422487398, guid: a98cac5c4453aa549b00b09c5ec65c06, type: 3}
       propertyPath: energyBar
@@ -5392,6 +5396,14 @@ PrefabInstance:
     - target: {fileID: 8906246219280418017, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
       propertyPath: m_Name
       value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219280418017, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219884676078, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: timeValue
+      value: 99999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}

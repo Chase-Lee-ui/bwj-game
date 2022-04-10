@@ -11,6 +11,8 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     private LineRenderer _lineRenderer;
     private Canvas _canvas;
     private bool _isDragStarted = false;
+ //   private WireTask _wireTask;
+    public bool IsSuccess = false;
 
         private void Awake()
     {
@@ -32,7 +34,22 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
             _lineRenderer.SetPosition(0, transform.position);
             _lineRenderer.SetPosition(1, _canvas.transform.TransformPoint(movePos));
-        } 
+        }
+        else
+        {
+            if(!IsSuccess)
+            {
+                _lineRenderer.SetPosition(0, Vector3.zero);
+                _lineRenderer.SetPosition(1, Vector3.zero);
+            }
+        }
+
+        bool isHovered = RectTransformUtility.RectangleContainsScreenPoint(transform as RectTransform, Input.mousePosition, _canvas.worldCamera);
+
+/*        if(isHovered)
+        {
+            _wireTask.CurrentHoveredWire = this;
+        }*/
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -46,11 +63,17 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
         {
             return;
         }
+        if (IsSuccess)
+        {
+            return;
+        }
         _isDragStarted = true;
+//        _wireTask.CurrentDraggedWire = this;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         _isDragStarted = false;
+ //       _wireTask.CurrentDraggedWire = null;
     }
 }

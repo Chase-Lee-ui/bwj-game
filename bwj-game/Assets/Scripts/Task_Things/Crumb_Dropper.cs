@@ -28,6 +28,7 @@ public class Crumb_Dropper : MonoBehaviour
     {
         yield return new WaitForSeconds(Time_Between_Crumbs);
         Instantiate(Crumbs[Random.Range(0, Crumbs.Length)], this.gameObject.transform.position, Quaternion.identity);
+        Current_Crumbs++;
         if(Current_Crumbs < Max_Crumbs)
         {
             StartCoroutine(Dropper());

@@ -42,5 +42,9 @@ public class TASK_Laundry_Sort : Task_Progress
         }
 
         Progress = total / (Shirts + Pants);
+        if(Progress >= 100)
+        {
+            Indicator.SetActive(false);
+        }
     }
 }

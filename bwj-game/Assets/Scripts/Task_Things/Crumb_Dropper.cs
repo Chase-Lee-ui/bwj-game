@@ -21,6 +21,11 @@ public class Crumb_Dropper : MonoBehaviour
 
     void Update()
     {
+        Vector3 diff = Destination - new Vector2(transform.position.x, transform.position.y);
+        diff.Normalize();
+ 
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 180);
         transform.position = Vector2.Lerp(transform.position, Destination, Time.deltaTime * 0.5f);
     }
 
@@ -28,6 +33,7 @@ public class Crumb_Dropper : MonoBehaviour
     {
         yield return new WaitForSeconds(Time_Between_Crumbs);
         Instantiate(Crumbs[Random.Range(0, Crumbs.Length)], this.gameObject.transform.position, Quaternion.identity);
+        Current_Crumbs++;
         if(Current_Crumbs < Max_Crumbs)
         {
             StartCoroutine(Dropper());

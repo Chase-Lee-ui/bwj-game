@@ -97,6 +97,7 @@ public class TASK_Laundry : Task_Progress
             if(LaundryIN == AmtOfLaundry)
             {
                 Phase3 = false;
+                Indicator.SetActive(false);
                 Progress = 100;
             }
         }

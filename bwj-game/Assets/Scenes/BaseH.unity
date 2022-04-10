@@ -2842,7 +2842,7 @@ MonoBehaviour:
   LaundryIN: 0
   AmtOfLaundry: 3
   Laundry: {fileID: 1608994592}
-  Canvas: {fileID: 1818271148}
+  Canvas: {fileID: 1768163177}
   Spawned: 0
 --- !u!61 &1194377647
 BoxCollider2D:

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Task_Laundry : Task_Progress
+public class TASK_Laundry : Task_Progress
 {
     public int LaundryIN = 0;
     public int AmtOfLaundry = 3;

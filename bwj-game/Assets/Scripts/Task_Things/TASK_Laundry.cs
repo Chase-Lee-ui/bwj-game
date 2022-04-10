@@ -42,6 +42,7 @@ public class TASK_Laundry : Task_Progress
             {
                 Destroy(Collector.gameObject);
                 Phase1 = false;
+                Progress = 100;
                 Timer = 15.0f;
             }
         }
@@ -70,6 +71,7 @@ public class TASK_Laundry : Task_Progress
             {
                 Destroy(Dryer.gameObject);
                 Phase2 = false;
+                Progress = 100;
                 Timer = 15.0f;
             }
         }
@@ -100,6 +102,15 @@ public class TASK_Laundry : Task_Progress
                 Indicator.SetActive(false);
                 Progress = 100;
             }
+        }
+
+        if(Progress >= 100)
+        {
+            Indicator.SetActive(false);
+        }
+        else
+        {
+            Indicator.SetActive(true);
         }
     }
 }

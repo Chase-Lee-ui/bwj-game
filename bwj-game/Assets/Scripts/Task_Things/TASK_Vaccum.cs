@@ -37,7 +37,7 @@ public class TASK_Vaccum : Task_Progress
         float total = Crumbs_Collected+Num_Of_Crumbs;
         if(total >= 0)
         {
-            Progress = (Crumbs_Collected / total)*100.0f;
+            this.Progress = (Crumbs_Collected / total)*100.0f;
         }
     }
 }

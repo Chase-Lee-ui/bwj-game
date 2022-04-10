@@ -25,6 +25,10 @@ public class Mouse_Move : MonoBehaviour
 
     void Update()
     {
+        if(Canva == null)
+        {
+            Canva = (Canvas)FindObjectOfType(typeof(Canvas));
+        }
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
             this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;

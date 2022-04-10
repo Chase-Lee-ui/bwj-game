@@ -11,14 +11,17 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
     private LineRenderer _lineRenderer;
     private Canvas _canvas;
     private bool _isDragStarted = false;
- //   private WireTask _wireTask;
+    private WireTask _wireTask;
     public bool IsSuccess = false;
+    public string numbermatch;
+/*    Wire hoveritem;*/
 
         private void Awake()
     {
         _image = GetComponent<Image>();
         _lineRenderer = GetComponent<LineRenderer>();
         _canvas = GetComponentInParent<Canvas>();
+        _wireTask = GetComponentInParent<WireTask>();
     }
 
     private void Update()
@@ -46,7 +49,7 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         bool isHovered = RectTransformUtility.RectangleContainsScreenPoint(transform as RectTransform, Input.mousePosition, _canvas.worldCamera);
 
-/*        if(isHovered)
+  /*     if(isHovered)
         {
             _wireTask.CurrentHoveredWire = this;
         }*/
@@ -68,12 +71,26 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
             return;
         }
         _isDragStarted = true;
-//        _wireTask.CurrentDraggedWire = this;
+/*        _wireTask.CurrentDraggedWire = this;*/
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        /*if (_wireTask.CurrentHoveredWire != null)
+        {
+            if (_wireTask.CurrentHoveredWire.numbermatch == numbermatch)
+            {
+                IsSuccess = true;
+            }
+        }*/
+
+
+        /*if (numbermatch.Equals(hoveritem.numbermatch))
+        {
+            IsSuccess = true;
+        }*/
+
         _isDragStarted = false;
- //       _wireTask.CurrentDraggedWire = null;
+/*        _wireTask.CurrentDraggedWire = null;*/
     }
 }

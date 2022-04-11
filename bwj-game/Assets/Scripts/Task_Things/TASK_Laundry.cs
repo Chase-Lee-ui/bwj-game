@@ -19,6 +19,7 @@ public class TASK_Laundry : Task_Progress
     void Start()
     {
         NameOfTask = "Laundry";
+        AmtOfLaundry = Mathf.CeilToInt(Difficulty * AmtOfLaundry);
     }
 
     public override void Update()

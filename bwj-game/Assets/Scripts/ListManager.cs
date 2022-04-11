@@ -46,6 +46,20 @@ public class ListManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (Task_Progress task in manager.GetComponent<Task_Manager>().Task_Progresses)
+        {
+            if (task.Progress >= 100)
+            {
+                foreach (GameObject lObject in taskList)
+                {
+                    if (task.NameOfTask == lObject.name)
+                    {
+                        lObject.GetComponent<TMP_Text>().fontStyle = FontStyles.Strikethrough;
+
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

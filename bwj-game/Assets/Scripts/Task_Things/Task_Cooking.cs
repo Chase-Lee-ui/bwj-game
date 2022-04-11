@@ -5,8 +5,16 @@ using UnityEngine.UI;
 
 public class Task_Cooking : MonoBehaviour
 {
+    [SerializeField] public float progressRate;
     public GameObject FryingPan;
     public GameObject Canvas;
+    public Slider slider;
+
+    public float currentProgress;
+    public float progress;
+
+    public Cooking_Progress within;
+    
     // Start is called before the first frame update
 
     void Start()
@@ -16,15 +24,42 @@ public class Task_Cooking : MonoBehaviour
 
     void Update()
     {
+        /*
         if (FryingPan.gameObject.transform.position.y <= 195
             && FryingPan.gameObject.transform.position.x <= -65
             && FryingPan.gameObject.transform.position.y >= 145
             && FryingPan.gameObject.transform.position.x >= -200)
         {
-            FryingPan.gameObject.SetActive(false);
+            progress += Time.deltaTime*progressRate;
+            slider.value = progress;
+        }
+        */
+        if (within.cooking)
+        {
+            progress += Time.deltaTime * progressRate;
+            slider.value = progress;
+        }
+        else
+        {
+            if (progress > 0)
+            {
+                progress -= Time.deltaTime * progressRate / 2;
+                slider.value = progress;
+            }
+        }
+
+        //progress += Time.deltaTime * progressRate;
+        slider.value = progress;
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            slider.value = 0;
+            progress = 0;
         }
     }
-    
+    public void completionRate(float progress)
+    {
+        slider.value = progress;
+    }
 }
 //failed drag and drop
     /*

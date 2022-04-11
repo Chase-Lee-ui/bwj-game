@@ -47,10 +47,10 @@ public class Player_Energy : MonoBehaviour
 
 
         //Recharge Station
-        if (this.gameObject.transform.position.y <= 1.5
-          && this.gameObject.transform.position.y >= -1.5
-          && this.gameObject.transform.position.x <= 1.5
-          && this.gameObject.transform.position.x >= -1.5
+        if (this.gameObject.transform.position.y <= 2.6
+          && this.gameObject.transform.position.y >= 1.2
+          && this.gameObject.transform.position.x <= 3.3
+          && this.gameObject.transform.position.x >= -4.8
           && currentEnergy < maxEnergy)
         {
             currentEnergy += Time.deltaTime*charge;

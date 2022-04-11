@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04776cc6d40e0764f8bba10fb3411cab
+guid: 089070394bee6514d91454c1b2191833
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Square_0
+      name: hoodie_0
       rect:
         serializedVersion: 2
-        x: 43
-        y: 63
-        width: 485
-        height: 435
+        x: 95
+        y: 213
+        width: 469
+        height: 426
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6754ecddfcddc4941a6c327c8021081e
-      internalID: -677613660
+      spriteID: fb55d0038222ea34492791a8216c6c4f
+      internalID: 2011242589
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Square_0: -677613660
+      hoodie_0: 2011242589
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

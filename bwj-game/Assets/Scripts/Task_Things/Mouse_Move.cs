@@ -27,7 +27,7 @@ public class Mouse_Move : MonoBehaviour
     {
         if(Canva == null)
         {
-            Canva = (Canvas)FindObjectOfType(typeof(Canvas));
+            Canva = GameObject.Find("Canvas_Interact").GetComponent<Canvas>();
         }
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {

@@ -9,6 +9,7 @@ public class Player_Movement : MonoBehaviour
     private Rigidbody2D rb;
     public float xDirection;
     public float yDirection;
+    public AudioSource Vroom;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +29,14 @@ public class Player_Movement : MonoBehaviour
  
          float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
          transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
+
+        if(xDirection == 0 && yDirection == 0)
+        {
+            Vroom.mute = true;
+        }
+        else
+        {
+            Vroom.mute = false;
+        }
     }
 }

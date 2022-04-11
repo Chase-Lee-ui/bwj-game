@@ -11,6 +11,7 @@ public class TASK_Laundry_Sort : Task_Progress
     public GameObject[] Shirt;
     public float Pants;
     public GameObject[] Pant;
+    public AudioSource Aud;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,7 +46,7 @@ public class TASK_Laundry_Sort : Task_Progress
         if(Progress >= 100)
         {
             Indicator.SetActive(false);
-            if(Interactables) { Destroy(Interactables); }
+            if(Interactables) { Destroy(Interactables); Aud.Play(); }
         }
     }
 }

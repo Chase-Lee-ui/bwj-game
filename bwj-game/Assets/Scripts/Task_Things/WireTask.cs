@@ -52,6 +52,27 @@ public class WireTask : MonoBehaviour
         StartCoroutine(CheckTaskCompletion());
     }
 
+    void Update()
+    {
+        bool checking = true;
+        foreach(var left in _leftWires)
+        {
+            if(!left.IsSuccess)
+            {
+                checking = false;
+            }
+        }
+
+        foreach(var right in _rightWires)
+        {
+            if(!right.IsSuccess)
+            {
+                checking = false;
+            }
+        }
+        IsTaskCompleted = checking;
+    }
+
     private IEnumerator CheckTaskCompletion()
     {
         while(!IsTaskCompleted)

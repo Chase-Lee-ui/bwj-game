@@ -39,6 +39,8 @@ public class Task_Cooking : Task_Progress
         if (Progress >= 100)
         {
             Rate_Of_Decay = 0;
+            Destroy(Interactables);
+            Destroy(Indicator);
         }
         /*
         slider.value = Progress;

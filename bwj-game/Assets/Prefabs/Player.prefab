@@ -188,4 +188,6 @@ MonoBehaviour:
   charge: 300
   maxEnergy: 1000
   currentEnergy: 0
+  Roomba_Station: {fileID: 0}
+  Player: {fileID: 6576271671355148664}
   energyBar: {fileID: 0}

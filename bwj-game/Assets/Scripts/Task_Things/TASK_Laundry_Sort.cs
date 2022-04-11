@@ -45,6 +45,7 @@ public class TASK_Laundry_Sort : Task_Progress
         if(Progress >= 100)
         {
             Indicator.SetActive(false);
+            if(Interactables) { Destroy(Interactables); }
         }
     }
 }

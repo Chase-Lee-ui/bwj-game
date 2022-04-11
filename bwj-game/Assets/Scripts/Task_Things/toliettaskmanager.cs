@@ -7,8 +7,8 @@ public class toliettaskmanager : MonoBehaviour
 
     public GameObject plunger;
     public int total;
-    private Task_Progress task;
     public GameObject toilet;
+    public float Progress_Total = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +30,7 @@ public class toliettaskmanager : MonoBehaviour
         if (collision.gameObject == plunger) 
         {
             total++;
-            task.Progress += 25;
+            Progress_Total += 25;
         }
     }
 }

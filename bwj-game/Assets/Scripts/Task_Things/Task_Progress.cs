@@ -10,6 +10,7 @@ public class Task_Progress : MonoBehaviour
     public float Progress = 0;
     public float Rate_Of_Decay = 0.5f;
     public bool Decay_Enabled;
+    public GameObject Interactables;
 
     public virtual void Update()
     {

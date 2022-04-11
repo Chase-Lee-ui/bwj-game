@@ -12,14 +12,14 @@ public class Player_Energy : MonoBehaviour
     // Start is called before the first frame update
     public float maxEnergy = 100;
     public float currentEnergy;
-
+    public GameObject Roomba_Station;
+    public Player_Movement Player;
     public Energy energyBar;
 
     void Start()
     {
         currentEnergy = maxEnergy;
         energyBar.SetMaxEnergy(maxEnergy);
-
     }
 
     // Update is called once per frame
@@ -28,12 +28,14 @@ public class Player_Energy : MonoBehaviour
         //Out of Energy Reset (technically tentative for change)
         if (currentEnergy <= 0)
         {
-            this.gameObject.SetActive(false);
+            // this.gameObject.SetActive(false);
+            transform.position = Vector2.Lerp(transform.position, Roomba_Station.transform.position, Time.deltaTime * 10.0f);
+            StartCoroutine(StopPlayer());
         }
-        if (!this.gameObject.activeSelf)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        // if (!this.gameObject.activeSelf)
+        // {
+        //     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // }
 
         //Manual Energy Loss (for testing purposes)
         if (Input.GetKeyDown(KeyCode.Space))
@@ -56,6 +58,13 @@ public class Player_Energy : MonoBehaviour
             currentEnergy += Time.deltaTime*charge;
             energyBar.SetEnergy(currentEnergy);
         }
+    }
+
+    IEnumerator StopPlayer()
+    {
+        Player.enabled = false;
+        yield return new WaitForSeconds(3.0f);
+        Player.enabled = true;
     }
 
     /*void LoseEnergy(float drain)

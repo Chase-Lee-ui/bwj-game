@@ -7,14 +7,13 @@ using UnityEngine.UI;
 public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
 {
     public bool IsLeftWire;
+    public Color CustomColor;
     private Image _image;
     private LineRenderer _lineRenderer;
     private Canvas _canvas;
     private bool _isDragStarted = false;
     private WireTask _wireTask;
     public bool IsSuccess = false;
-    public string numbermatch;
-/*    Wire hoveritem;*/
 
         private void Awake()
     {
@@ -49,10 +48,17 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
 
         bool isHovered = RectTransformUtility.RectangleContainsScreenPoint(transform as RectTransform, Input.mousePosition, _canvas.worldCamera);
 
-  /*     if(isHovered)
+        if (isHovered) //Entire If statement was commented out before
         {
             _wireTask.CurrentHoveredWire = this;
-        }*/
+        }
+    }
+
+    public void SetColor(Color color)
+    {
+        _image.color = color;
+        _lineRenderer.startColor = color;
+        _lineRenderer.endColor = color;
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -71,26 +77,21 @@ public class Wire : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHand
             return;
         }
         _isDragStarted = true;
-/*        _wireTask.CurrentDraggedWire = this;*/
+        _wireTask.CurrentDraggedWire = this; //Commented out before
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        /*if (_wireTask.CurrentHoveredWire != null)
+        if (_wireTask.CurrentHoveredWire != null) //Entire if statement block commented out before
         {
-            if (_wireTask.CurrentHoveredWire.numbermatch == numbermatch)
+            if (_wireTask.CurrentHoveredWire.CustomColor == CustomColor && !_wireTask.CurrentHoveredWire.IsLeftWire) 
             {
                 IsSuccess = true;
+                _wireTask.CurrentHoveredWire.IsSuccess = true;
             }
-        }*/
-
-
-        /*if (numbermatch.Equals(hoveritem.numbermatch))
-        {
-            IsSuccess = true;
-        }*/
+        }
 
         _isDragStarted = false;
-/*        _wireTask.CurrentDraggedWire = null;*/
+        _wireTask.CurrentDraggedWire = null; //Commented out before
     }
 }

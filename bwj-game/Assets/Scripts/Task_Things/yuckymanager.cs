@@ -6,6 +6,7 @@ public class yuckymanager : MonoBehaviour
 {
     public int count;
     public GameObject interact;
+    public Task_Progress Manage;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,8 @@ public class yuckymanager : MonoBehaviour
     {
         if (count == 8) 
         {
-            interact.SetActive(false);
+            Manage.Progress = 100;
+            Destroy(interact);
         }
     }
 

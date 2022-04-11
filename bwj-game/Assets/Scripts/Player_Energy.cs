@@ -15,6 +15,8 @@ public class Player_Energy : MonoBehaviour
     public GameObject Roomba_Station;
     public Player_Movement Player;
     public Energy energyBar;
+    public Vector2 MaxBounds;
+    public Vector2 MinBounds;
 
     void Start()
     {
@@ -49,11 +51,11 @@ public class Player_Energy : MonoBehaviour
 
 
         //Recharge Station
-        if (this.gameObject.transform.position.y <= 2.6
-          && this.gameObject.transform.position.y >= 1.2
-          && this.gameObject.transform.position.x <= 3.3
-          && this.gameObject.transform.position.x >= -4.8
-          && currentEnergy < maxEnergy)
+        if(this.gameObject.transform.position.x <= MaxBounds.x &&
+        this.gameObject.transform.position.x >= MinBounds.x &&
+        this.gameObject.transform.position.y <= MaxBounds.y &&
+        this.gameObject.transform.position.y >= MinBounds.y &&
+        currentEnergy <= maxEnergy)
         {
             currentEnergy += Time.deltaTime*charge;
             energyBar.SetEnergy(currentEnergy);

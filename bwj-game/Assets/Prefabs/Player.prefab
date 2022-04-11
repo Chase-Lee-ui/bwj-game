@@ -193,6 +193,8 @@ MonoBehaviour:
   Roomba_Station: {fileID: 0}
   Player: {fileID: 6576271671355148664}
   energyBar: {fileID: 0}
+  MaxBounds: {x: -3.25, y: 2.43}
+  MinBounds: {x: -4.9, y: 0.87}
 --- !u!82 &8738659727891959281
 AudioSource:
   m_ObjectHideFlags: 0

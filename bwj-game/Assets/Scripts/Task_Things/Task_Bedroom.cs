@@ -27,6 +27,7 @@ public class Task_Bedroom : Task_Progress
         {
             messyBedroom.SetActive(false);
             cleanBedroom.SetActive(true);
+            Destroy(Indicator);
         }
         
     }

@@ -3236,7 +3236,7 @@ MonoBehaviour:
   - {fileID: 1415250829}
   Difficulty_Augment: 1
   Game_Over: {fileID: 309719429}
-  Timer: 65
+  Timer: 60
   CompletedAll: 1
   Initiated: 1
   Winner: {fileID: 1367928119}
@@ -11170,11 +11170,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6576271671355148665, guid: a98cac5c4453aa549b00b09c5ec65c06, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.1
+      value: -4.05
       objectReference: {fileID: 0}
     - target: {fileID: 6576271671355148665, guid: a98cac5c4453aa549b00b09c5ec65c06, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 1.72
       objectReference: {fileID: 0}
     - target: {fileID: 6576271671355148665, guid: a98cac5c4453aa549b00b09c5ec65c06, type: 3}
       propertyPath: m_LocalPosition.z

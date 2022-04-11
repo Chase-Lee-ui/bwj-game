@@ -5309,7 +5309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8906246219280418016, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: -45
       objectReference: {fileID: 0}
     - target: {fileID: 8906246219280418016, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5326,6 +5326,30 @@ PrefabInstance:
     - target: {fileID: 8906246219280418017, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
       propertyPath: m_Name
       value: Timer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219884676064, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219884676064, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219884676064, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219884676064, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219884676064, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906246219884676064, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e4259764f41f27488bee75272bc4b65, type: 3}

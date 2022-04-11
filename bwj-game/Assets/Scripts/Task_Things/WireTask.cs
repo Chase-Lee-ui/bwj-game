@@ -41,9 +41,6 @@ public class WireTask : MonoBehaviour
             int pickedLeftWireIndex = Random.Range(0, _availableLeftWireIndex.Count);
             int pickedRightWireIndex = Random.Range(0, _availableRightWireIndex.Count);
 
-            //        _leftWires[_availableLeftWireIndex[pickedLeftWireIndex]].SetColor(pickedColor);
-            //        _rightWires[_availableRightWireIndex[pickedRightWireIndex]].SetColor(pickedColor);
-
             _leftWires[_availableLeftWireIndex[pickedLeftWireIndex]].SetColor(pickedColor);
             _rightWires[_availableRightWireIndex[pickedRightWireIndex]].SetColor(pickedColor);
 

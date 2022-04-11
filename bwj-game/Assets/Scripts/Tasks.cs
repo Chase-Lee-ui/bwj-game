@@ -11,11 +11,12 @@ public class Tasks : MonoBehaviour
     {
         if(Player && Inside)
         {
-            Task.SetActive(true);
+            if(Task) { Task.SetActive(true); }
+            
         }
         else
         {
-            Task.SetActive(false);
+            if(Task) { Task.SetActive(false); }
         }
     }
     public void OnTriggerEnter2D(Collider2D col)

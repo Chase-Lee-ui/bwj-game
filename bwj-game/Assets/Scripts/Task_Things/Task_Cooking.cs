@@ -23,7 +23,7 @@ public class Task_Cooking : Task_Progress
 
     public override void Update()
     {
-        if (within.cooking)
+        if (within.cooking && Progress < 100)
         {
             Progress += Time.deltaTime * progressRate;
             slider.value = Progress;
@@ -32,9 +32,13 @@ public class Task_Cooking : Task_Progress
         {
             if (Progress > 0)
             {
-                Progress -= Time.deltaTime * progressRate / 2;
+                Progress -= Time.deltaTime * Rate_Of_Decay / 2;
                 slider.value = Progress;
             }
+        }
+        if (Progress >= 100)
+        {
+            Rate_Of_Decay = 0;
         }
         /*
         slider.value = Progress;

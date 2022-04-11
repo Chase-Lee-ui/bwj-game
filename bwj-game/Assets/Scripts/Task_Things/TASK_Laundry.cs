@@ -15,6 +15,7 @@ public class TASK_Laundry : Task_Progress
     [Range(0, 30.0f)]
     public float Timer;
     public bool Phase1 = true, Phase2 = false, Phase3 = false;
+    public AudioSource Aud;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,11 +45,13 @@ public class TASK_Laundry : Task_Progress
                 Destroy(Collector.gameObject);
                 Phase1 = false;
                 Progress = 100;
-                Timer = 15.0f;
+                Timer = 90.0f;
+                Aud.Play();
             }
         }
         else
         {
+            if(Timer <= 88.0f) { Aud.mute = true; }
             if(Timer<=0)
             {
                 if(!Phase1) { Phase2 = true; Dryer.gameObject.SetActive(true); }

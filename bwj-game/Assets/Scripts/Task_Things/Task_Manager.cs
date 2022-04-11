@@ -7,7 +7,7 @@ public class Task_Manager : MonoBehaviour
     public Task_Progress[] Task_Progresses;
     public GameObject Game_Over;
     public float Timer = 60.0f;
-    public bool CompletedAll;
+    public bool CompletedAll = true;
     public GameObject Winner;
     void Update()
     {

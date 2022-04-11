@@ -25,7 +25,7 @@ public class Timer : MonoBehaviour
         {
             timeValue = 0;
             //outa energy death / tentative to change
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         DisplayTime(timeValue);

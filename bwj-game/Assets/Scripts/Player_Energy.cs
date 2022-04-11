@@ -29,7 +29,7 @@ public class Player_Energy : MonoBehaviour
         if (currentEnergy <= 0)
         {
             // this.gameObject.SetActive(false);
-            transform.position = Vector2.Lerp(transform.position, Roomba_Station.transform.position, Time.deltaTime * 10.0f);
+            transform.position = Vector2.Lerp(transform.position, Roomba_Station.transform.position, Time.deltaTime * 100.0f);
             StartCoroutine(StopPlayer());
         }
         // if (!this.gameObject.activeSelf)

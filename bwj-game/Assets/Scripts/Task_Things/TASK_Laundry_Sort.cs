@@ -23,12 +23,12 @@ public class TASK_Laundry_Sort : Task_Progress
     {
         if(!Spawned)
         {
-            for(int i = 0; i<Shirts; i++)
+            for(int i = 0; i<Shirts*Difficulty; i++)
             {
                 var img = Instantiate(Shirt[Random.Range(0, Shirt.Length)]) as GameObject;
                 img.transform.SetParent(Spawn_Point1.transform, false);
             }
-            for(int i = 0; i<Pants; i++)
+            for(int i = 0; i<Pants*Difficulty; i++)
             {
                 var img = Instantiate(Pant[Random.Range(0, Pant.Length)]) as GameObject;
                 img.transform.SetParent(Spawn_Point2.transform, false);

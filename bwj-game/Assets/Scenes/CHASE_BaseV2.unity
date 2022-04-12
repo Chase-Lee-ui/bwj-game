@@ -3247,7 +3247,7 @@ MonoBehaviour:
   - {fileID: 1415250829}
   Difficulty_Augment: 1
   Game_Over: {fileID: 309719429}
-  Timer: 60
+  timer: {fileID: 56263694}
   CompletedAll: 1
   Initiated: 1
   Winner: {fileID: 1367928119}

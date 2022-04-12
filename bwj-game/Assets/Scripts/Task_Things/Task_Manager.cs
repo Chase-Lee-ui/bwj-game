@@ -7,7 +7,7 @@ public class Task_Manager : MonoBehaviour
     public Task_Progress[] Task_Progresses;
     public float Difficulty_Augment;
     public GameObject Game_Over;
-    public float Timer = 60.0f;
+    public Timer timer;
     public bool CompletedAll = true;
     public bool Initiated = true;
     public GameObject Winner;
@@ -24,30 +24,30 @@ public class Task_Manager : MonoBehaviour
 
     void Update()
     {
-        Timer -= Time.deltaTime;
         foreach(var tasks in Task_Progresses)
         {
-            tasks.Difficulty = Difficulty_Augment;
-            if(Timer<= 0)
+            if (tasks.Progress != 100)
             {
-                if(tasks.Progress <= 0)
-                {
-                    CompletedAll = false;
-                    Game_Over.SetActive(true);
-                }
+                CompletedAll = false;
+            }
+            else if (tasks.Progress == 100) 
+            {
+                CompletedAll = true;
             }
         }
-
-        if(Timer <= 0 && CompletedAll)
+        if(timer.timeValue >= 0 && CompletedAll)
         {
             Winner.SetActive(true);
         }
+        else if(timer.timeValue <= 0 && !CompletedAll)
+        {
+            Game_Over.SetActive(true);
+        }
 
-        if(!Initiated)
+        if (!Initiated)
         {
             var comp = GameObject.FindObjectsOfType<Task_Progress>();
             Task_Progresses = comp;
-            Timer = 120;
             Winner.SetActive(false);
             Game_Over.SetActive(false);
             Initiated = true;

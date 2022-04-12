@@ -11,6 +11,7 @@ public class Task_Manager : MonoBehaviour
     public bool CompletedAll = true;
     public bool Initiated = true;
     public GameObject Winner;
+    public bool Done = false;
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Manager");
@@ -24,22 +25,20 @@ public class Task_Manager : MonoBehaviour
 
     void Update()
     {
+        bool complete = true;
         foreach(var tasks in Task_Progresses)
         {
-            if (tasks.Progress != 100)
+            if (tasks.Progress < 100)
             {
-                CompletedAll = false;
-            }
-            else if (tasks.Progress == 100) 
-            {
-                CompletedAll = true;
+                complete = false;
             }
         }
-        if(timer.timeValue >= 0 && CompletedAll)
+
+        if(timer.timeValue >= 0 && complete && !Done)
         {
             Winner.SetActive(true);
         }
-        else if(timer.timeValue <= 0 && !CompletedAll)
+        else if(timer.timeValue <= 0 && !complete && !Done)
         {
             Game_Over.SetActive(true);
         }
@@ -48,6 +47,7 @@ public class Task_Manager : MonoBehaviour
         {
             var comp = GameObject.FindObjectsOfType<Task_Progress>();
             Task_Progresses = comp;
+            timer.timeValue = 120.0f;
             Winner.SetActive(false);
             Game_Over.SetActive(false);
             Initiated = true;

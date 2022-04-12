@@ -17,6 +17,7 @@ public class Player_Energy : MonoBehaviour
     public Energy energyBar;
     public Vector2 MaxBounds;
     public Vector2 MinBounds;
+    public Timer timer;
 
     void Start()
     {
@@ -31,8 +32,10 @@ public class Player_Energy : MonoBehaviour
         if (currentEnergy <= 0)
         {
             // this.gameObject.SetActive(false);
-            transform.position = Vector2.Lerp(transform.position, Roomba_Station.transform.position, Time.deltaTime * 100.0f);
-            StartCoroutine(StopPlayer());
+            transform.position = new Vector2(Roomba_Station.transform.position.x, Roomba_Station.transform.position.y);
+            StartCoroutine("StopPlayer");
+            currentEnergy = maxEnergy;
+            timer.timeValue -= 20;
         }
         // if (!this.gameObject.activeSelf)
         // {
@@ -65,7 +68,7 @@ public class Player_Energy : MonoBehaviour
     IEnumerator StopPlayer()
     {
         Player.enabled = false;
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(.5f);
         Player.enabled = true;
     }
 

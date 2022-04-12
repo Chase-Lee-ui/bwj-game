@@ -19,7 +19,6 @@ public class yuckymanager : MonoBehaviour
         if (count == 8) 
         {
             Manage.Progress = 100;
-            Destroy(interact);
         }
     }
 

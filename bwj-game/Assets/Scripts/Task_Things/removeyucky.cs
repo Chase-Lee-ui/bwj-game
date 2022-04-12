@@ -6,7 +6,6 @@ public class removeyucky : MonoBehaviour
 {
     public GameObject towel;
     public yuckymanager yuckymanager;
-    private Task_Progress task;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +23,6 @@ public class removeyucky : MonoBehaviour
         if (collision.gameObject == towel) 
         {
             yuckymanager.count++;
-            task.Progress += 12.5f;
             gameObject.SetActive(false);
         }
     }

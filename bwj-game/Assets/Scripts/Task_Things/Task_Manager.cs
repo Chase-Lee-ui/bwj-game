@@ -47,7 +47,7 @@ public class Task_Manager : MonoBehaviour
         {
             var comp = GameObject.FindObjectsOfType<Task_Progress>();
             Task_Progresses = comp;
-            Timer = 60;
+            Timer = 120;
             Winner.SetActive(false);
             Game_Over.SetActive(false);
             Initiated = true;

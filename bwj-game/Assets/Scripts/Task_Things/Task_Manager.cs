@@ -30,7 +30,7 @@ public class Task_Manager : MonoBehaviour
             {
                 CompletedAll = false;
             }
-            else if (tasks.Progress == 100) 
+            else if (tasks.Progress >= 100) 
             {
                 CompletedAll = true;
             }

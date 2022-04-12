@@ -11,6 +11,8 @@ public class Task_Manager : MonoBehaviour
     public bool CompletedAll = true;
     public bool Initiated = true;
     public GameObject Winner;
+    bool complete = true;
+    bool fail = false;
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("Manager");
@@ -25,6 +27,7 @@ public class Task_Manager : MonoBehaviour
     void Update()
     {
         Timer -= Time.deltaTime;
+        /*
         foreach(var tasks in Task_Progresses)
         {
             tasks.Difficulty = Difficulty_Augment;
@@ -37,12 +40,28 @@ public class Task_Manager : MonoBehaviour
                 }
             }
         }
-
-        if(Timer <= 0 && CompletedAll)
+        */
+        foreach(var tasks in Task_Progresses)
+        {
+            if(tasks.Progress >= 100)
+            {
+                complete = true;
+            }
+            else
+            {
+                complete = false;
+            }
+        }
+        if(complete && !fail)
         {
             Winner.SetActive(true);
         }
-
+        else if(Timer <= 0 && !complete)
+        {
+            fail = true;
+            Game_Over.SetActive(true);
+        }
+        /*
         if(!Initiated)
         {
             var comp = GameObject.FindObjectsOfType<Task_Progress>();
@@ -53,5 +72,6 @@ public class Task_Manager : MonoBehaviour
             Initiated = true;
             CompletedAll = true;
         }
+        */
     }
 }
